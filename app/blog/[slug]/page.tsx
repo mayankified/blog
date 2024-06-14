@@ -1,3 +1,4 @@
+// "use client"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { client } from "@/sanity/lib/client";
@@ -5,15 +6,14 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import { PortableText } from "next-sanity";
 import { Metadata } from "next";
-import { useState } from "react";
-// import {Porta}
+import Commnets from "@/components/Commnets";
 
 interface Params {
   params: {
     slug: string;
   };
 }
-export const revalidate = 60;
+// export const revalidate = 60;
 
 async function getBlogPost(slug: string) {
   const post = await client.fetch(
@@ -22,13 +22,9 @@ async function getBlogPost(slug: string) {
   return post;
 }
 
-// export const metadata: Metadata = {
-//   title: data[0] ? data[0].title : "Blog Post | Coding Blog",
-//   description: data[0] && data[0].metaDescription,
-// };
-//how do i set metadata of this page??
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const data =await client.fetch(
+  const data = await client.fetch(
     `*[_type == "post" && slug.current =="${params.slug}"]{title,icon,metaDescription}`
   );
   return {
@@ -41,7 +37,6 @@ const page = async (params: Params) => {
   const data = await getBlogPost(params.params.slug);
   return (
     <div className="layout-wrapper">
-      
       <Navbar />
       <div className="blog-post-container">
         {data[0] ? (
@@ -86,18 +81,7 @@ const page = async (params: Params) => {
           </div>
         )}
       </div>
-      {/* <Giscus
-        repo="krehwell/P-Blog"
-        repoId="MDEwOlJlcG9zaXRvcnkzNDA3Nzc0ODI="
-        category="General"
-        categoryId="DIC_kwDOFE_aCs4B_2iF"
-        mapping="title"
-        reactionsEnabled="1"
-        emitMetadata="0"
-        theme="light"
-        lang="en"
-        crossorigin="anonymous"
-      /> */}
+      <Commnets/>
       <Footer />
     </div>
   );
