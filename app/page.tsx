@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Metadata } from "next";
 import { projects } from "../constants/index";
-export const revalidate = 60;
+import { revPath } from "@/utils/index.action.ts";
+// export const revalidate = 60;
 
 async function getPosts() {
   const posts = await client.fetch(`*[_type == "post"]{title, slug,icon}`);
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 const Posts = ({ data }: any) => {
+  revPath('/');
   let post = data ? (
     data?.map((item: any) => {
       return (
