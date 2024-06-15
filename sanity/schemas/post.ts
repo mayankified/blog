@@ -22,7 +22,6 @@ export const post = {
       title: "Slug",
       type: "slug",
       options: { source: "title" },
-      validation: (Rule: Rule) => Rule.required().error("Required"),
     },
     {
       name: "publishdate",
@@ -34,7 +33,6 @@ export const post = {
       name: "metaDescription",
       title: "Meta Description",
       type: "string",
-      validation: (Rule: Rule) => Rule.required().error("Required"),
     },
     {
       name: "tags",
