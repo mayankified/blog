@@ -1,4 +1,3 @@
-// "use client"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { client } from "@/sanity/lib/client";
@@ -13,7 +12,10 @@ interface Params {
     slug: string;
   };
 }
-// export const revalidate = 60;
+
+export const revalidate = 60;
+
+
 
 async function getBlogPost(slug: string) {
   const post = await client.fetch(

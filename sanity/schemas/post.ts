@@ -13,9 +13,9 @@ export const post = {
       validation: (Rule: Rule) => Rule.required().error("Required"),
     },
     {
-        name: "icon",
-        title: "Icon",
-        type: "string",
+      name: "icon",
+      title: "Icon",
+      type: "string",
     },
     {
       name: "slug",
@@ -23,7 +23,6 @@ export const post = {
       type: "slug",
       options: { source: "title" },
       validation: (Rule: Rule) => Rule.required().error("Required"),
-
     },
     {
       name: "publishdate",
@@ -36,7 +35,6 @@ export const post = {
       title: "Meta Description",
       type: "string",
       validation: (Rule: Rule) => Rule.required().error("Required"),
-      
     },
     {
       name: "tags",
@@ -48,10 +46,7 @@ export const post = {
       name: "body",
       title: "Body",
       type: "array",
-      of: [
-        { type: "block" },
-        
-      ],
+      of: [{ type: "block" }],
     },
   ],
 };
