@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { Metadata } from "next";
 import { projects } from "../constants/index";
-import { revPath } from "@/utils/index.action.ts";
+import { revPath } from "@/utils";
 // export const revalidate = 60;
 
 async function getPosts() {

@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import { PortableText } from "next-sanity";
 import { Metadata } from "next";
 import Commnets from "@/components/Commnets";
+import { revPath } from "@/utils";
 
 interface Params {
   params: {
@@ -37,6 +38,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 const page = async (params: Params) => {
   const data = await getBlogPost(params.params.slug);
+  revPath(`/blog/${params.params.slug}`);
+
   return (
     <div className="layout-wrapper">
       <Navbar />
