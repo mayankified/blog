@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const Posts = ({ data }: any) => {
-  revPath('/');
+  revPath("/");
   let post = data ? (
     data?.map((item: any) => {
       return (
@@ -31,7 +31,7 @@ const Posts = ({ data }: any) => {
               alt=" image unrelated to the post"
               height={55}
               width={55}
-              className="homepage-latest-thumbnail"
+              className="homepage-latest-thumbnail aspect-square object-cover"
               quality={20}
             />
             <div className="homepage-latest-blog-post-title">
@@ -58,15 +58,11 @@ const page = async () => {
         <div>
           <h1>Hi, I&apos;m mayank. I am never sleepless.</h1>
           <p>
-            This is where I write stuff. Abandon all hope. Leave all uncertainty
-            of my future. And dump all multimillion imaginary ideas.
+            A Engineering student from NIT Surat and a philoshoper.
           </p>
           <p>
-            This blog is a jamstack. And yes, this is following those tacky web
-            developer who think that instead of making a stupid LinkedIn
-            bullshit, it is more efficient to waste 2 weeks building a
-            &quot;from scratch&quot; portfolio blog that has no visitor except
-            the author.
+            This is where I write stuff. Abandon all hope. Leave all uncertainty
+            of my future. And dump all multimillion imaginary ideas.
           </p>
         </div>
         <div className="homepage-latest-blog-posts">

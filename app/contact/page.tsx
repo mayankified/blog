@@ -16,9 +16,11 @@ const page = () => {
       <div className="contact-container">
         <div className="contact-section">
           <h1>Brief Myself</h1>
+          <p>Gym guy, DHH guy, Philoshoper guy, Artist guy...unfunny guy. </p>
           <p>
-            I love meme, vim, vim meme, and of course... nobody expects spanish
-            inquisition.
+          
+            I am a guy who doesn&apos;t know what he is doing. I just do it
+            anyways.
           </p>
           <p>
             <i>

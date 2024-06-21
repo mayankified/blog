@@ -22,11 +22,6 @@ const page = () => {
             doing with it but I use it anyway.
           </p>
           <p>
-            I feel so exhausted trying to finish this junk blog as a fullstack +
-            cms project of mine and there are always last minute changes which
-            are not last minute.
-          </p>
-          <p>
             Sometimes hang around with frontend, sometimes backend, sometimes
             design. Everything&apos;s is so tiring that leads to beat a meat in
             the end.
@@ -60,8 +55,13 @@ const page = () => {
               <span> C++ - Python - C - Javascript - Go Lang</span>
             </li>
             <li>
-                <strong>Tools</strong>: <span>
-                    Github - ESLint
+                <strong>Tools and Techs</strong> : <span>
+                    Github - ESLint - Kafka
+                </span>
+            </li>
+            <li>
+                <strong>Data Science & Machine Learning</strong> : <span>
+                    Pandas - Numpy - Scikit-learn - Tensorflow - Keras
                 </span>
             </li>
             <li>
