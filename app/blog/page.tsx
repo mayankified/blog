@@ -12,7 +12,9 @@ export const metadata: Metadata = {
   description: "List of all blog posts public on mayank blog",
 };
 async function getPosts() {
-  const posts = await client.fetch(`*[_type == "post"]{title, slug,icon}`);
+  const posts = await client.fetch(`*[_type == "post"]{title, slug,icon,publishdate}`);
+  //@ts-ignore
+  posts.sort((a, b) => new Date(b.publishdate) - new Date(a.publishdate));
   return posts;
 }
 export const revalidate = 60;
@@ -38,7 +40,7 @@ const Posts = ({ data }: any) => {
               <h2>{post.title}</h2>
               <div className="blog-posts-list-item-date">
                 <span>
-                  {dayjs(data[0]?.publishdate).format("MMMM D, YYYY")}
+                  {dayjs(post.publishdate).format("MMMM D, YYYY")}
                 </span>
               </div>
             </div>

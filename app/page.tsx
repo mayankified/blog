@@ -9,7 +9,13 @@ import { revPath } from "@/utils";
 // export const revalidate = 60;
 
 async function getPosts() {
-  const posts = await client.fetch(`*[_type == "post"]{title, slug,icon}`);
+  const latestposts = await client.fetch(`*[_type == "post"]{title, slug,icon,publishdate}`);
+    // Sorting posts by publishdate in descending order (latest first)
+    //@ts-ignore
+    latestposts.sort((a, b) => new Date(b.publishdate) - new Date(a.publishdate));
+
+    // Limiting to the latest 5 posts
+    const posts = latestposts.slice(0, 5);
   return posts;
 }
 export const metadata: Metadata = {
