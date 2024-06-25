@@ -62,9 +62,11 @@
 }
 
 .homepage-latest-thumbnail {
+    object-fit: cover;
     vertical-align: middle;
     height: 55px;
-    width: auto;
+
+    width: 55px;
 }
 
 .homepage-latest-blog-post-title {

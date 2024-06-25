@@ -43,7 +43,7 @@ const page = () => {
             </li>
             <li>
               <strong>Instagram</strong>:{" "}
-              <a href="https://www.reddit.com/user/mynkashh">mynkashh</a>
+              <a href="https://www.instagram.com/mynkashh">mynkashh</a>
             </li>
           </ul>
         </div>

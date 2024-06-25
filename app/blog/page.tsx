@@ -19,7 +19,7 @@ export const revalidate = 60;
 
 
 const Posts = ({ data }: any) => {
-  console.log(data);
+  // console.log(data);
   let posts = data ? (
     data.map((post: any) => {
       return (
